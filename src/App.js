@@ -82,7 +82,6 @@ class App extends Component {
               `You won in ${this.state.attemptNum +1} attempts`,
               'success'
           );
-          //alert(`You won in ${this.state.attemptNum} attempts`);
       }
   }
   resetGame(){
