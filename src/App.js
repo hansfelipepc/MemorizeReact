@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Header from './Header';
 import Board from './Board';
 import './App.css';
+import swal from 'sweetalert2'
 import buildDeck from './utils/buildDeck';
 
 const getInitialState = () => {
@@ -76,7 +77,12 @@ class App extends Component {
       if(
           deck.filter((card)=> !card.wasGuessed).length === 0
       ){
-          alert(`You won in ${this.state.attemptNum} attempts`);
+          swal(
+              'Good job!',
+              `You won in ${this.state.attemptNum +1} attempts`,
+              'success'
+          );
+          //alert(`You won in ${this.state.attemptNum} attempts`);
       }
   }
   resetGame(){
